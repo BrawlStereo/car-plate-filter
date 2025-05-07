@@ -2,19 +2,19 @@ import numpy as np
 import cv2
 import matplotlib.pyplot as plt
 
-def procesar_placa(img_path, titulo, index):
+def procesar_placa(ruta_imagen, titulo, indice):
     # Cargar la imagen
-    img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
+    imagen = cv2.imread(ruta_imagen, cv2.IMREAD_GRAYSCALE)
 
     # Binarizar la imagen y suavizar
-    _, img = cv2.threshold(img, 110, 255, cv2.THRESH_BINARY_INV)
-    img = cv2.medianBlur(img, 15)
+    _, imagen = cv2.threshold(imagen, 110, 255, cv2.THRESH_BINARY_INV)
+    imagen = cv2.medianBlur(imagen, 15)
 
     # Detección de bordes
-    edges = cv2.Canny(img, threshold1=100, threshold2=200)
+    bordes = cv2.Canny(imagen, threshold1=100, threshold2=200)
 
-    plt.subplot(2, 2, index)
-    plt.imshow(edges, cmap='gray')
+    plt.subplot(2, 2, indice)
+    plt.imshow(bordes, cmap='gray')
     plt.title(titulo)
     plt.axis('off')
 
