@@ -35,7 +35,6 @@ procesar_placa("placa_q.jpg", "Placa 1", 1)
 procesar_placa("placa_2.jpg", "Placa 2", 2)
 procesar_placa("placa_3.jpg", "Placa 3", 3)
 procesar_placa("placa_4.jpg", "Placa 4", 4)
-plt.subplot(2, 2, 1)
 
 plt.tight_layout()
 plt.show()
